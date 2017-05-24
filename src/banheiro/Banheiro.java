@@ -28,6 +28,8 @@ public class Banheiro {
 		sexoAtual = lock.newCondition();
 		banheiroLotado = lock.newCondition();
 	}
+	
+	//<getters and setters>
 
 	public int getNumeroVagas() {
 		return numeroVagas;
@@ -44,10 +46,6 @@ public class Banheiro {
 	public void setSexo(String sexo) {
 		this.sexo = sexo;
 	}
-
-	public int getNumeroPessoas() {
-		return this.pessoasUsando.size();
-	}
 	
 	public int getTempoMaximo() {
 		return tempoMaximo;
@@ -57,6 +55,12 @@ public class Banheiro {
 		this.tempoMaximo = tempoMaximo;
 	}
 
+	//</getters and setters>
+	
+	public int getNumeroPessoas() {
+		return this.pessoasUsando.size();
+	}
+	
 	public boolean banheiroVazio(){
 		return this.pessoasUsando.isEmpty();
 	}
@@ -94,6 +98,7 @@ public class Banheiro {
 		if (this.pessoasUsando.size() == 1){
 			this.setSexo(pessoa.getSexo());
 		}
+		System.out.println("Numero de pessoas no banheiro: "+getNumeroPessoas());
 	}
 	
 	public void sair(Pessoa pessoa){

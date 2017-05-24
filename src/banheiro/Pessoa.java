@@ -46,7 +46,6 @@ public class Pessoa extends Thread{
 
 	@Override
 	public void run() {
-		System.out.println(this.nome + " vai entrar no banheiro");
 		//Adquiro o lock para mexer na lista de pessoas que estao usando o banheiro, que eh recurso compartilhado
 		banheiro.lock.lock();
 		try {
